@@ -56,6 +56,136 @@
             font-family: 'Outfit', sans-serif;
             scroll-behavior: smooth;
         }
+        /* Footer Base */
+.site-footer {
+    background-color: #0f172a; /* Dark Navy to match your theme */
+    color: #e2e8f0; /* Light gray text for readability */
+    padding: 60px 0 0 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Columns */
+.footer-col {
+    flex: 1;
+    min-width: 200px; /* Ensures stacking on mobile */
+}
+
+.brand-col {
+    flex: 1.5; /* Makes the brand column slightly wider */
+}
+
+/* Typography */
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-desc {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+.hackathon-tag {
+    background: rgba(34, 197, 94, 0.1); /* Subtle green background */
+    color: #22c55e; /* Agri Green */
+    padding: 5px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 13px;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+h4 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Links */
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.site-footer ul li {
+    margin-bottom: 12px;
+}
+
+.site-footer ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer ul li a:hover {
+    color: #22c55e; /* Green hover effect */
+    padding-left: 5px; /* Subtle movement on hover */
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #22c55e;
+    transform: translateY(-3px);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-desc {
+        max-width: 100%;
+    }
+}
 
         /* Glassmorphism */
         .glass {
@@ -312,14 +442,14 @@
     <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
         <!-- Background Slider -->
         <div class="absolute inset-0 w-full h-full">
-            <div class="hero-slide active" style="background-image: url('assets/farm_drone_survey_1766501284151.png')">
+            <div class="hero-slide active" style="background-image: url('assets/farm_drone_survey.png')">
             </div>
-            <div class="hero-slide" style="background-image: url('assets/smart_farming_dashboard_1766501303268.png')">
+            <div class="hero-slide" style="background-image: url('assets/smart_farming_dashboard.png')">
             </div>
-            <div class="hero-slide" style="background-image: url('assets/healthy_crop_closeup_1766501336427.png')">
+            <div class="hero-slide" style="background-image: url('assets/healthy_crop_closeup.png')">
             </div>
             <div class="hero-slide"
-                style="background-image: url('assets/automated_irrigation_system_1766501356061.png')"></div>
+                style="background-image: url('assets/automated_irrigation_system.png')"></div>
         </div>
 
         <!-- Carousel Controls -->
@@ -331,7 +461,7 @@
             class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/30 backdrop-blur-md border border-white/20 text-white w-12 h-12 flex items-center justify-center rounded-full transition z-20 focus:outline-none">
             <i class="fa-solid fa-chevron-right text-xl"></i>
         </button>
-        <div class="hero-slide" style="background-image: url('assets/modern_tractor_sunset_1766501376934.png')">
+        <div class="hero-slide" style="background-image: url('assets/modern_tractor_sunset.png')">
         </div>
         <div class="hero-overlay"></div>
         </div>
@@ -865,35 +995,55 @@
                 </div>
             </div>
         </div>
-        <!-- Footer -->
-        <footer class="bg-gray-900 text-white py-4 relative overflow-hidden">
-            <!-- Subtle Grid Background -->
-            <div
-                class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10">
+        <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-col">
+            <div class="footer-logo">
+                <span class="logo-icon">🌿</span> AgriPlus
             </div>
-            <div
-                class="max-w-7xl mx-auto px-4 relative z-10 w-full flex flex-col md:flex-row justify-between items-center gap-2">
+            <p class="footer-desc">
+                Empowering farmers with AI-driven insights, real-time market data, and community support.
+            </p>
+            <p class="hackathon-tag">
+                🚀 Engineered for <strong>UHACK 4.0</strong>
+            </p>
+        </div>
 
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Crop Doctor</a></li>
+                <li><a href="#">Market Prices</a></li>
+                <li><a href="#">Outbreaks</a></li>
+            </ul>
+        </div>
 
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
 
-                <!-- Copyright -->
-                <p class="text-gray-400 text-sm text-center md:text-left">&copy; 2025-26<img src="assets/agri_plus.png"
-                        class="h-8 w-8 object-contain" alt="AgriPlus Logo">AgriPlus. <span
-                        class="hidden sm:inline">Engineered for UHACK 4.0</span></p>
-
-                <!-- Socials -->
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110"><i
-                            class="fa-brands fa-github text-lg"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110"><i
-                            class="fa-brands fa-twitter text-lg"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110"><i
-                            class="fa-brands fa-linkedin text-lg"></i></a>
-                </div>
+        <div class="footer-col social-col">
+            <h4>Connect</h4>
+            <div class="social-icons">
+                <a href="https://github.com/TheMukeshDev/AgriPlus" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/themukeshdev" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/themukeshdev/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/themukeshdev/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
-        </footer>
+        </div>
+    </div>
 
-        <!-- Voice Assistant Moved to Analysis Page -->
+    <div class="footer-bottom">
+        <p>&copy; 2025-26 AgriPlus. All rights reserved.</p>
+    </div>
+</footer><!-- Voice Assistant Moved to Analysis Page -->
         <!-- Scripts -->
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
